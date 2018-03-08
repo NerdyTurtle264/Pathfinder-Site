@@ -1,0 +1,61 @@
+<!-- Top Navigation section-->
+<nav class="w3-bar" style="background-color:#578CA9">
+  <a href="Home.html" class="w3-bar-item w3-button" style="vertical-align: middle; background-color:#e67e22">Home</a>
+  <div class="w3-hide-small w3-hide-medium">
+    <!-- copy "<a href="#" class="w3-bar-item w3-button">Text</a>" 
+         to make more nav items-->
+    <a href="Services.html" class="w3-bar-item w3-button">Services</a>
+    <a href="Employment.html" class="w3-bar-item w3-button">Employment Opportunities</a>
+    <a href="Contact.html" class="w3-bar-item w3-button">Contact Us</a>
+    <a href="Events.html" class="w3-bar-item w3-button">Events</a>
+    <div class="w3-dropdown-hover">
+      <button class="w3-button">Dropdown</button>
+      <div class="w3-dropdown-content w3-bar-block w3-card-4">
+        <a href="Events.html" class="w3-bar-item w3-button">Link 1</a>
+        <a href="Events.html" class="w3-bar-item w3-button">Link 2</a>
+        <a href="Events.html" class="w3-bar-item w3-button">Link 3</a>
+      </div>
+    </div>
+  </div>
+  <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large" onclick="MobileDropFunc()">&#9776;</a>
+</nav>
+
+<div class="w3-right w3-hide-small w3-hide-medium">
+  <gcse:search class="w3-bar-item w3-button"></gcse:search>
+  <!--<input type="text" class="w3-bar-item w3-input" placeholder="Search..">
+  <button href="#" class="w3-bar-item w3-button" style="background-color:#e67e22" onclick="OverlayOn()">Search</button>-->
+</div>
+<!-- End of Top Navigation bar section -->
+
+<!-- Mobile Navigation bar section 
+If editing the Top Nav to add content need to do it here too.
+Uses accordian instead of drop down so no content is hidden below for tablet and phone
+users-->
+<div id="MobileNav" class="w3-bar-block w3-hide w3-hide-large w3-center" style="background-color:#578CA9">
+  <a href="Services.html" class="w3-bar-item w3-button">Services</a>
+  <a href="Employment.html" class="w3-bar-item w3-button">Employment Opportunities</a>
+  <a href="Contact.html" class="w3-bar-item w3-button">Contact Us</a>
+  <a href="Events.html" class="w3-bar-item w3-button">Events</a>
+  <div class="w3-bar-item w3-button" onclick="MobileAccFunc()">
+    <button class="w3-button">Accordion</button>
+    <div id="MobileNavAcc" class="w3-hide">
+      <a href="Events.html" class="w3-bar-item w3-button">Link 1</a>
+      <a href="Events.html" class="w3-bar-item w3-button">Link 2</a>
+      <a href="Events.html" class="w3-bar-item w3-button">Link 3</a>
+    </div>
+  </div>
+  <!--<div>
+    <input type="text" class="w3-bar-item w3-input" placeholder="Search..">
+    <a href="#" class="w3-bar-item w3-button w3-green">Go</a>
+    </div?>
+  </div>-->
+  <gcse:search class="w3-bar-item w3-button"></gcse:search>
+</div>
+<!-- End of Mobile Navigation bar section -->
+<style type="text/css">
+  .cse .gsc-control-cse,
+  .gsc-control-cse {
+    padding: 0em !important;
+    margin: 0px !important;
+  }
+</style>

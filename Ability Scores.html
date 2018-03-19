@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Ashen Gaming</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="includes/w3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://www.w3schools.com/lib/w3.js"></script>
+  <script type="text/javascript" src="includes/AbilityScores.js"></script>
+</head>
+
+<body>
+  <div w3-include-html="includes/navigation.html"></div>
+  <div w3-include-html="includes/header.html"></div>
+
+  <div class="w3-row">
+    <div class="w3-content w3-display-container">
+      <div class="w3-half">
+        <div class="w3-center">
+          <h1>Ability Point Buy</h1>
+          <h3>Welcome to the world of quantifying a person into blocks of numbers.</h3>
+        </div>
+      </div>
+      <div class="w3-half">
+        <img src="images/MurderHobos.png" class="w3-round w3-image header-slides" alt="The Arc of Clarion and Venango" style="width:100%"></img>
+      </div>
+    </div>
+  </div>
+  <!-- Beginning of actual content -->
+  <div class="w3-row">
+    <div class="w3-content">
+      <div class="w3-center">
+        <div class="w3-center">
+          <button class="w3-button" id="Low" style="background-color:gold">Low 10pts</button>
+          <button class="w3-button" id="Standard" style="background-color:gold">Standard 15pts</button>
+          <button class="w3-button" id="High" style="background-color:maroon; color:white">High 20pts</button>
+          <button class="w3-button" id="Epic" style="background-color:gold">Epic 25pts</button>
+        </div>
+        <table class="w3-table w3-centered">
+          <tr>
+            <th>Ability</th>
+            <th>Points</th>
+            <th>Racial Trait</th>
+            <th>Level Up</th>
+            <th>Other</th>
+            <th>Age</th>
+            <th>Total Points</th>
+            <th>Mod</th>
+          </tr>
+          <tr>
+            <td class="w3-tooltip">Strength
+              <span style="position:absolute;left:0;bottom:36px;width:700px" class="w3-text w3-tag w3-left-align">Strength measures muscle and physical power. This ability is important for those who engage in hand-to-hand
+                (or “melee”) combat, such as fighters, monks, paladins, and some rangers. Strength also sets the maximum
+                amount of weight your character can carry.
+                <br>
+                <br> A character with a Strength score of 0 is too weak to move in any way and is unconscious. Some creatures
+                (such as incorporeal creatures) do not possess a Strength score and have no modifier at all to Strength-based
+                skills or checks.
+                <br> You apply your character’s Strength modifier to:
+                <li style="text-indent: 20px">Melee attack rolls.</li>
+                <li style="text-indent: 20px">Damage rolls when using a melee weapon or a thrown weapon, including a sling. (Exceptions: Off-hand attacks
+                  receive only half the character’s Strength bonus, while two-handed attacks receive 1–1/2 times the Strength
+                  bonus. A Strength penalty, but not a bonus, applies to attacks made with a bow that is not a composite
+                  bow.)
+                </li>
+                <li style="text-indent: 20px">Climb and Swim checks.</li>
+                <li style="text-indent: 20px">Strength checks (for breaking down doors and the like).</li>
+              </span>
+            </td>
+            <td>
+              <input type="number" class="w3-round" id="Strength" min="7" max="18" value="10" style="width: 4em">
+            </td>
+            <td>
+              <input type="number" class="w3-round" id="StrRace" value="0" style="width: 4em">
+            </td>
+            <td>
+              <input type="number" class="w3-round" id="StrLevel" value="0" style="width: 4em">
+            </td>
+            <td>
+              <input type="number" class="w3-round" id="StrOther" value="0" style="width: 4em">
+            </td>
+            <td>
+              <span id="StrAge">0</span>
+            </td>
+            <td>
+              <span id="StrTotal">0</span>
+            </td>
+            <td>
+              <span id="StrMod">0</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="w3-tooltip">Dexterity
+              <span style="position:absolute;left:0;bottom:36px;width:500px" class="w3-text w3-tag">Dexterity measures agility, reflexes, and balance. This ability is the most important one for rogues, but it’s
+                also useful for characters who wear light or medium armor or no armor at all. This ability is vital for characters
+                seeking to excel with ranged weapons, such as the bow or sling.</span>
+            </td>
+            <td>
+              <input type="number" class="w3-round" id="Dexterity" min="7" max="18" value="10" style="width: 4em">
+            </td>
+            <td>
+              <input type="number" class="w3-round" id="DexRace" value="0" style="width: 4em">
+            </td>
+            <td>
+              <input type="number" class="w3-round" id="DexLevel" value="0" style="width: 4em">
+            </td>
+            <td>
+              <input type="number" class="w3-round" id="DexOther" value="0" style="width: 4em">
+            </td>
+            <td>
+              <span id="DexAge">0</span>
+            </td>
+            <td>
+              <span id="DexTotal">0</span>
+            </td>
+            <td>
+              <span id="DexMod">0</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="w3-tooltip">Constitution
+              <span style="position:absolute;left:0;bottom:36px;width:500px" class="w3-text w3-tag">Constitution represents your character’s health and stamina. A Constitution bonus increases a character’s hit
+                points, so the ability is important for all classes. Some creatures, such as undead and constructs, do not
+                have a Constitution score. Their modifier is +0 for any Constitution-based checks. A character with a Constitution
+                score of 0 is dead. You apply your character’s Constitution modifier to:
+                <ul>
+                  <li>Each roll of a Hit Die (though a penalty can never drop a result below 1—that is, a character always gains
+                    at least 1 hit point each time he advances in level).</li>
+                  <li>Fortitude saving throws, for resisting poison, disease, and similar threats.</li>
+                </ul>
+              </span>
+            </td>
+            <td>
+              <input type="number" class="w3-round" id="Constitution" min="7" max="18" value="10" style="width: 4em">
+            </td>
+            <td>
+              <input type="number" class="w3-round" id="ConRace" value="0" style="width: 4em">
+            </td>
+            <td>
+              <input type="number" class="w3-round" id="ConLevel" value="0" style="width: 4em">
+            </td>
+            <td>
+              <input type="number" class="w3-round" id="ConOther" value="0" style="width: 4em">
+            </td>
+            <td>
+              <span id="ConAge">0</span>
+            </td>
+            <td>
+              <span id="ConTotal">0</span>
+            </td>
+            <td>
+              <span id="ConMod">0</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="w3-tooltip">Intelligence
+              <span style="position:absolute;left:0;bottom:36px;width:500px" class="w3-text w3-tag">Constitution represents your character’s health and stamina. A Constitution bonus increases a character’s hit
+                points, so the ability is important for all classes. Some creatures, such as undead and constructs, do not
+                have a Constitution score. Their modifier is +0 for any Constitution-based checks. A character with a Constitution
+                score of 0 is dead. You apply your character’s Constitution modifier to: Each roll of a Hit Die (though a
+                penalty can never drop a result below 1—that is, a character always gains at least 1 hit point each time
+                he advances in level). Fortitude saving throws, for resisting poison, disease, and similar threats.</span>
+            </td>
+            <td>
+              <input type="number" class="w3-round" id="Intelligence" min="7" max="18" value="10" style="width: 4em">
+            </td>
+            <td>
+              <input type="number" class="w3-round" id="IntRace" value="0" style="width: 4em">
+            </td>
+            <td>
+              <input type="number" class="w3-round" id="IntLevel" value="0" style="width: 4em">
+            </td>
+            <td>
+              <input type="number" class="w3-round" id="IntOther" value="0" style="width: 4em">
+            </td>
+            <td>
+              <span id="IntAge">0</span>
+            </td>
+            <td>
+              <span id="IntTotal">0</span>
+            </td>
+            <td>
+              <span id="IntMod">0</span>
+            </td>
+          </tr>
+          <tr>
+            <td>Wisdom</td>
+            <td>
+              <input type="number" class="w3-round" id="Wisdom" min="7" max="18" value="10" style="width: 4em">
+            </td>
+            <td>
+              <input type="number" class="w3-round" id="WisRace" value="0" style="width: 4em">
+            </td>
+            <td>
+              <input type="number" class="w3-round" id="WisLevel" value="0" style="width: 4em">
+            </td>
+            <td>
+              <input type="number" class="w3-round" id="WisOther" value="0" style="width: 4em">
+            </td>
+            <td>
+              <span id="WisAge">0</span>
+            </td>
+            <td>
+              <span id="WisTotal">0</span>
+            </td>
+            <td>
+              <span id="WisMod">0</span>
+            </td>
+          </tr>
+          <tr>
+            <td>Charisma</td>
+            <td>
+              <input type="number" class="w3-round" id="Charisma" min="7" max="18" value="10" style="width: 4em">
+            </td>
+            <td>
+              <input type="number" class="w3-round" id="ChaRace" value="0" style="width: 4em">
+            </td>
+            <td>
+              <input type="number" class="w3-round" id="ChaLevel" value="0" style="width: 4em">
+            </td>
+            <td>
+              <input type="number" class="w3-round" id="ChaOther" value="0" style="width: 4em">
+            </td>
+            <td>
+              <span id="ChaAge">0</span>
+            </td>
+            <td>
+              <span id="ChaTotal">0</span>
+            </td>
+            <td>
+              <span id="ChaMod">0</span>
+            </td>
+          </tr>
+        </table>
+        <div class="w3-center">
+          <button class="w3-button" id="Young" style="background-color:gold">Young</button>
+          <button class="w3-button" id="Adult" style="background-color:maroon; color:white">Adult</button>
+          <button class="w3-button" id="Middle" style="background-color:gold">Middle Age</button>
+          <button class="w3-button" id="Old" style="background-color:gold">Old</button>
+          <button class="w3-button" id="Venerable" style="background-color:gold">Venerable</button>
+        </div>
+        <span class="w3-center w3-large" id="Remaining" style="margin: 25px">Points Remaining: 20</span>
+      </div>
+    </div>
+  </div>
+  <!-- Ending of content -->
+
+  <div w3-include-html="includes/footer.html"></div>
+  <script type="text/javascript" src="includes/myscripts.js"></script>
+  <script>
+    /*(function () {
+      var cx = '001366538940187463150:c2ylfwlv-qw';
+      var gcse = document.createElement('script');
+      gcse.type = 'text/javascript';
+      gcse.async = true;
+      gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(gcse, s);
+    })();*/
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!-- Top Navigation section-->
+<nav class="w3-bar" style="background-color:maroon">
+  <!-- #990000 #006600 #8B4513-->
+  <a href="index.html" class="w3-bar-item w3-button" style="vertical-align: middle; background-color:gold">Home</a>
+  <div class="w3-hide-small w3-hide-medium w3-gold w3-text-white">
+    <!-- copy "<a href="#" class="w3-bar-item w3-button">Text</a>" to make more nav items-->
+    <a href="lore.html" class="w3-bar-item w3-button">Our World</a>
+    <div class="w3-dropdown-hover">
+      <button class="w3-button">Campaigns</button>
+      <div class="w3-dropdown-content w3-bar-block w3-card-4" style="background-color:gold">
+        <a href="towers.html" class="w3-bar-item w3-button">Towers of the Renaissance</a>
+        <a href="madness.html" class="w3-bar-item w3-button">Madness in Merra</a>
+        <a href="crystals.html" class="w3-bar-item w3-button">Crystal Cataclysm</a>
+        <a href="demand.html" class="w3-bar-item w3-button">Dragon's Demand</a>
+        <a href="revenge.html" class="w3-bar-item w3-button">Revenge of the Wronged</a>
+        <a href="goram.html" class="w3-bar-item w3-button">Goram Gods</a>
+      </div>
+    </div>
+    <a href="character making.html" class="w3-bar-item w3-button">Character Making</a>
+    <a href="Ability Scores.html" class="w3-bar-item w3-button">Ability Scores</a>
+    <a href="rules.html" class="w3-bar-item w3-button">House Rules</a>
+    <a href="hall of fame.html" class="w3-bar-item w3-button">Hall of Fame</a>
+    <a href="graveyard.html" class="w3-bar-item w3-button">Graveyard</a>
+    <div class="w3-right w3-gold">
+      <!--<gcse:search class="w3-bar-item w3-button "></gcse:search>-->
+    </div>
+  </div>
+  <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large" onclick="MobileDropFunc()">&#9776;</a>
+</nav>
+<!-- End of Top Navigation bar section -->
+
+<!-- Mobile Navigation bar section 
+If editing the Top Nav to add content need to do it here too.
+Uses accordian instead of drop down so no content is hidden below for tablet and phone
+users-->
+<div id="MobileNav" class="w3-bar-block w3-hide w3-hide-large w3-center" style="background-color:maroon">
+  <a href="lore.html" class="w3-bar-item w3-button">Our World</a>
+  <div class="w3-bar-item w3-button" onclick="MobileAccFunc()">
+    <button class="w3-button">Campaigns</button>
+    <div id="MobileNavAcc" class="w3-hide">
+      <a href="Events.html" class="w3-bar-item w3-button">Towers of the Renaissance</a>
+      <a href="Events.html" class="w3-bar-item w3-button">Madness in Merra</a>
+      <a href="Events.html" class="w3-bar-item w3-button">Crystal Cataclysm</a>
+      <a href="Events.html" class="w3-bar-item w3-button">Dragon's Demand</a>
+      <a href="Events.html" class="w3-bar-item w3-button">Revenge of the Wronged</a>
+      <a href="Events.html" class="w3-bar-item w3-button">Goram Gods</a>
+    </div>
+  </div>
+  <a href="character making.html" class="w3-bar-item w3-button">Character Making</a>
+  <a href="Ability Scores.html" class="w3-bar-item w3-button">Ability Scores</a>
+  <a href="rules.html" class="w3-bar-item w3-button">House Rules</a>
+  <a href="hall of fame.html" class="w3-bar-item w3-button">Hall of Fame</a>
+  <a href="graveyard.html" class="w3-bar-item w3-button">Graveyard</a>
+
+  <div style="background-color:maroon">
+    <!--<gcse:search class="w3-bar-item w3-button "></gcse:search>-->
+  </div>
+</div>
+<!-- End of Mobile Navigation bar section -->
+<style type="text/css">
+  .cse .gsc-control-cse,
+  .gsc-control-cse {
+    background-color: maroon;
+    border-color: maroon;
+    padding: 0em !important;
+    margin: 0px !important;
+  }
+</style>

@@ -43,10 +43,76 @@ window.onload = function () {
   $("Middle").addEventListener("click", Middle);
   $("Old").addEventListener("click", Old);
   $("Venerable").addEventListener("click", Venerable);
+
+  $("Humanish").addEventListener("click", Humanish);
+  $("Dwarf").addEventListener("click", Dwarf);
+  $("Elf").addEventListener("click", Elf);
+  $("Gnome").addEventListener("click", Gnome);
+  $("Halfling").addEventListener("click", Halfling);
 };
 
 function $(id) {
   return document.getElementById(id);
+}
+
+function Humanish() {
+  $("StrRace").value = 0;
+  $("DexRace").value = 0;
+  $("ConRace").value = 0;
+  $("IntRace").value = 0;
+  $("WisRace").value = 0;
+  $("ChaRace").value = 0;
+  $("Race").innerText = "Human/Half Breed";
+  Activate("Race");
+  CalculateStats();
+}
+
+function Dwarf() {
+  $("StrRace").value = 0;
+  $("DexRace").value = 0;
+  $("ConRace").value = 2;
+  $("IntRace").value = 0;
+  $("WisRace").value = 2;
+  $("ChaRace").value = -2;
+  $("Race").innerText = "Dwarf";
+  Activate("Race");
+  CalculateStats();
+}
+
+function Elf() {
+  $("StrRace").value = 0;
+  $("DexRace").value = 2;
+  $("ConRace").value = -2;
+  $("IntRace").value = 2;
+  $("WisRace").value = 0;
+  $("ChaRace").value = 0;
+  $("Race").innerText = "Elf";
+  Activate("Race");
+  CalculateStats();
+}
+
+function Gnome() {
+  $("StrRace").value = -2;
+  $("DexRace").value = 0;
+  $("ConRace").value = 2;
+  $("IntRace").value = 0;
+  $("WisRace").value = 0;
+  $("ChaRace").value = 2;
+  $("Race").innerText = "Gnome";
+  Activate("Race");
+  CalculateStats();
+}
+
+function Halfling() {
+  $("StrRace").value = -2;
+  $("DexRace").value = 2;
+  $("ConRace").value = 0;
+  $("IntRace").value = 0;
+  $("WisRace").value = 0;
+  $("ChaRace").value = 2;
+  $("Race").innerText = "Halfling";
+  Activate("Race");
+  CalculateStats();
 }
 
 function Young() {

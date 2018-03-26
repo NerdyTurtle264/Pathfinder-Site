@@ -49,29 +49,67 @@ window.onload = function () {
   $("Elf").addEventListener("click", Elf);
   $("Gnome").addEventListener("click", Gnome);
   $("Halfling").addEventListener("click", Halfling);
+
+  $("Restart").addEventListener("click", Restart);
 };
 
 function $(id) {
   return document.getElementById(id);
 }
 
-function Humanish() {
+function Restart() {
+  ZeroRace();
+  ZeroLevel();
+  ZeroOther();
+  $("Race").innerText = "Race";
+  Deactivate("Race");
+  $("Strength").value = 10;
+  $("Dexterity").value = 10;
+  $("Constitution").value = 10;
+  $("Intelligence").value = 10;
+  $("Wisdom").value = 10;
+  $("Charisma").value = 10;
+  Adult();
+  High();
+}
+
+function ZeroLevel() {
+  $("StrLevel").value = 0;
+  $("DexLevel").value = 0;
+  $("ConLevel").value = 0;
+  $("IntLevel").value = 0;
+  $("WisLevel").value = 0;
+  $("ChaLevel").value = 0;
+}
+
+function ZeroOther() {
+  $("StrOther").value = 0;
+  $("DexOther").value = 0;
+  $("ConOther").value = 0;
+  $("IntOther").value = 0;
+  $("WisOther").value = 0;
+  $("ChaOther").value = 0;
+}
+
+function ZeroRace() {
   $("StrRace").value = 0;
   $("DexRace").value = 0;
   $("ConRace").value = 0;
   $("IntRace").value = 0;
   $("WisRace").value = 0;
   $("ChaRace").value = 0;
+}
+
+function Humanish() {
+  ZeroRace();
   $("Race").innerText = "Human/Half Breed";
   Activate("Race");
   CalculateStats();
 }
 
 function Dwarf() {
-  $("StrRace").value = 0;
-  $("DexRace").value = 0;
+  ZeroRace();
   $("ConRace").value = 2;
-  $("IntRace").value = 0;
   $("WisRace").value = 2;
   $("ChaRace").value = -2;
   $("Race").innerText = "Dwarf";
@@ -80,23 +118,19 @@ function Dwarf() {
 }
 
 function Elf() {
-  $("StrRace").value = 0;
+  ZeroRace();
   $("DexRace").value = 2;
   $("ConRace").value = -2;
   $("IntRace").value = 2;
-  $("WisRace").value = 0;
-  $("ChaRace").value = 0;
   $("Race").innerText = "Elf";
   Activate("Race");
   CalculateStats();
 }
 
 function Gnome() {
+  ZeroRace();
   $("StrRace").value = -2;
-  $("DexRace").value = 0;
   $("ConRace").value = 2;
-  $("IntRace").value = 0;
-  $("WisRace").value = 0;
   $("ChaRace").value = 2;
   $("Race").innerText = "Gnome";
   Activate("Race");
@@ -104,11 +138,9 @@ function Gnome() {
 }
 
 function Halfling() {
+  ZeroRace();
   $("StrRace").value = -2;
   $("DexRace").value = 2;
-  $("ConRace").value = 0;
-  $("IntRace").value = 0;
-  $("WisRace").value = 0;
   $("ChaRace").value = 2;
   $("Race").innerText = "Halfling";
   Activate("Race");
@@ -251,7 +283,7 @@ function CalculatePoints() {
   PointsRemaining -= pointSystem[Number($("Charisma").value)];
   span.innerText = "Points Remaining:" + PointsRemaining;
   if (PointsRemaining <= 0){
-    span.style.backgroundColor = "maroon"
+    span.style.backgroundColor = "red"
   } else {
     span.style.backgroundColor = ""
   }

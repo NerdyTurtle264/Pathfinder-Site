@@ -282,8 +282,10 @@ function CalculatePoints() {
   PointsRemaining -= pointSystem[Number($("Wisdom").value)];
   PointsRemaining -= pointSystem[Number($("Charisma").value)];
   span.innerText = "Points Remaining:" + PointsRemaining;
-  if (PointsRemaining <= 0){
+  if (PointsRemaining < 0){
     span.style.backgroundColor = "red"
+  } else if (PointsRemaining == 0){
+    span.style.backgroundColor = "green"
   } else {
     span.style.backgroundColor = ""
   }
